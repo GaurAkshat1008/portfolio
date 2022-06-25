@@ -69,6 +69,7 @@ export const Hero = () => {
                         translateY: [0, 0, -5, 0],
                         color: ["#fff", "#f0f", "#0ff", "#00000000"],
                       }}
+                      // @ts-ignore
                       transition={{
                         duration: 1,
                         ease: "easeInOut",
@@ -90,6 +91,7 @@ export const Hero = () => {
                         translateY: [0, 0, 5, 0],
                         color: ["#fff", "#f0f", "#0ff", "#00000000"],
                       }}
+                      // @ts-ignore
                       transition={{
                         duration: 1,
                         ease: "easeInOut",
@@ -114,11 +116,11 @@ export const Hero = () => {
                       scale: [1, 1.2, 1, 1.2, 1, 1.2],
                       color: ["#fff", "#0ff", "#f0f"],
                     }}
+                      // @ts-ignore
                     transition={{
                       duration: 4,
                       ease: "easeInOut",
-                      loop: Infinity,
-                      repeatType: "loop",
+                        repeat: "Infinity",
                     }}
                   >
                     <Button
