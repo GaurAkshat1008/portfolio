@@ -1,56 +1,55 @@
 import {
-  Link as ChakraLink,
+  Center,
+  Divider,
+  Flex,
+  HStack,
+  Stack,
   Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+  VStack,
+} from "@chakra-ui/react";
+import { Container } from "../components/Container";
+import { Footer } from "../components/Footer";
+import { Hero } from "../components/Hero";
+import { About } from "../components/About";
+import { useColorMode } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { SideBar } from "../components/SideBar";
+const Index:React.FC<{}> = ({}) => {
+  const { setColorMode } = useColorMode();
+  const [isLoading, setIsLoading] = useState(true);
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 4000);
+  useEffect(() => {
+    setColorMode("dark");
+    window.addEventListener("scroll", () => {
+      console.log(window.scrollY);
+    });
+  }, []);
+  return (
+    <Flex flexDirection={"row"}>
+      {/* <Flex position={"fixed"} width="6%">
+        {isLoading ? null : <SideBar />}
+      </Flex> */}
+      <Flex
+        flex={1}
+        // width={'100vw'}
+        flexDirection={"column"}
+        overflowX={"hidden"}
+        // justifyContent={"center"}
+      >
+        <Hero />
+        {isLoading ? null : (
+          <>
+            <About />
+            <Footer>
+              <Text>Hi Guys ❤️ you</Text>
+            </Footer>
+          </>
+        )}
+      </Flex>
+    </Flex>
+  );
+};
 
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
-
-const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text color="text">
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>TypeScript</Code>.
-      </Text>
-
-      <List spacing={3} my={0} color="text">
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
-
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
-
-export default Index
+export default Index;

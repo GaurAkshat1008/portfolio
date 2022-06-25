@@ -1,7 +1,10 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, ThemeConfig } from '@chakra-ui/react'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
-const fonts = { mono: `'Menlo', monospace` }
+const fonts = { 
+  heading: 'Permanent Marker, cursive',
+  body: 'Gentium Plus, serif'  
+}
 
 const breakpoints = createBreakpoints({
   sm: '40em',
@@ -10,7 +13,21 @@ const breakpoints = createBreakpoints({
   xl: '80em',
 })
 
+const config: ThemeConfig = {
+  initialColorMode: 'dark',
+  useSystemColorMode: true,
+}
+
 const theme = extendTheme({
+  styles:{
+    global:{
+      '::-webkit-scrollbar':{
+        width: '0px',
+        display: 'none'
+      }
+    }
+  },
+  config, 
   semanticTokens: {
     colors: {
       text: {
@@ -19,12 +36,25 @@ const theme = extendTheme({
       },
       heroGradientStart: {
         default: '#7928CA',
-        _dark: '#e3a7f9',
+        _dark: '#f0f',
+        // _dark: 'rgb(178, 0, 178)',
       },
       heroGradientEnd: {
         default: '#FF0080',
-        _dark: '#fbec8f',
+        _dark: '#0ff',
       },
+      heroGradientMid: {
+        default: '#ffc4df',
+        // _dark: '#fff',
+      },
+      borderShadowCyan:{
+        default:'rgb(2, 141, 141)',
+        _dark:'#0ff',
+      },
+      borderShadowPink:{
+        default:'rgb(139, 2, 139)',
+        _dark:'#f0f',
+      }
     },
     radii: {
       button: '12px',
