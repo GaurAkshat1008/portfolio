@@ -27,6 +27,10 @@ export const Contact: React.FC<{}> = ({}) => {
                 },
                 body: JSON.stringify(values),
               }).then((res) => {
+                values.email = "";
+                values.message = "";
+                values.name = "";
+                values.subject = "";
                 console.log(res.status)
                 setTimeout(() => {
                   setSubmitting(false);
