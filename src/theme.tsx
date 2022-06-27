@@ -62,6 +62,8 @@ const theme = extendTheme({
   },
   colors: {
     black: '#16161D',
+    white: '#fff',
+    cyan: '#0ff',
   },
   fonts,
   breakpoints,

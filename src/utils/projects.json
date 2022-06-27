@@ -1,0 +1,27 @@
+[
+  {
+    "name": "QRoom",
+    "description": "An idea to connect people with each other easily with just a click of a button",
+    "link": "https://github.com/jueviole-grace/QRoom"
+  },
+  {
+    "name": "DaWae",
+    "description": "website for people to post blogs and like your favorite posts ",
+    "link": "https://github.com/jueviole-grace/daWae/tree/master"
+  },
+  {
+    "name": "Krypt",
+    "description": "A single page application for a cryptocurrency exchange platform that allows users to buy and sell cryptocurrencies",
+    "link": "https://github.com/jueviole-grace/Krypt"
+  },
+  {
+    "name": "Carsell",
+    "description": "A single application to meet all your needs related to buying and sellin 2nd hand cars it connects buyers and sellers in simple interface",
+    "link": "https://github.com/jueviole-grace/CarSell"
+  },
+  {
+    "name": "Grahashram",
+    "description": "Solution for SIH 2022 PS-PK1031(a solution for people to connect the culture through homestays and for homestays to advertise themselves easily)",
+    "link": "https://github.com/shivang2607/SIH-Homestay-Project"
+  }
+]

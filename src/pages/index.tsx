@@ -1,19 +1,12 @@
 import {
-  Center,
-  Divider,
-  Flex,
-  HStack,
-  Stack,
-  Text,
-  VStack,
+  Flex, Text, useColorMode
 } from "@chakra-ui/react";
-import { Container } from "../components/Container";
+import React, { useEffect, useState } from "react";
+import { About } from "../components/About";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
-import { About } from "../components/About";
-import { useColorMode } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { SideBar } from "../components/SideBar";
+import { Projects } from "../components/Projects";
+import { Skills } from "../components/Skills";
 const Index:React.FC<{}> = ({}) => {
   const { setColorMode } = useColorMode();
   const [isLoading, setIsLoading] = useState(true);
@@ -22,26 +15,22 @@ const Index:React.FC<{}> = ({}) => {
   }, 4000);
   useEffect(() => {
     setColorMode("dark");
-    window.addEventListener("scroll", () => {
-      console.log(window.scrollY);
-    });
+    document.body.style.overflow = "hidden";
   }, []);
   return (
     <Flex flexDirection={"row"}>
-      {/* <Flex position={"fixed"} width="6%">
-        {isLoading ? null : <SideBar />}
-      </Flex> */}
+     
       <Flex
         flex={1}
-        // width={'100vw'}
         flexDirection={"column"}
         overflowX={"hidden"}
-        // justifyContent={"center"}
       >
         <Hero />
         {isLoading ? null : (
           <>
             <About />
+            <Skills />
+            <Projects />
             <Footer>
               <Text>Hi Guys ❤️ you</Text>
             </Footer>
