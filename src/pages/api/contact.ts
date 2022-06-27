@@ -1,6 +1,6 @@
-import nodemailer from 'nodemailer'
+import nodemailer from "nodemailer";
 
-export default function contact (req: { body: any; }, res: any) {
+export default function contact(req: { body: any }, res: any) {
   // console.log(req.body)
   var mailConfig;
   if (process.env.NODE_ENV !== "development") {
@@ -15,7 +15,7 @@ export default function contact (req: { body: any; }, res: any) {
       },
       auth: {
         user: "akshatgaur69@outlook.com",
-        pass: process.env.NEXT_PUBLIC_OUTLOOK_PASSWORD,
+        pass: "Iamakshat@01",
       },
     };
   } else {
@@ -33,8 +33,8 @@ export default function contact (req: { body: any; }, res: any) {
     from: mailConfig.auth.user,
     to: mailConfig.auth.user,
     subject: "New Message from " + req.body.name,
-    html:`<p>Name: ${req.body.name}</p> <p>Email: ${req.body.email}</p> <p>Message: ${req.body.message}</p>`,
-  }
+    html: `<p>Name: ${req.body.name}</p> <p>Email: ${req.body.email}</p> <p>Message: ${req.body.message}</p>`,
+  };
   transporter.sendMail(mailData, (err, info) => {
     if (err) {
       console.log(err);
@@ -43,6 +43,5 @@ export default function contact (req: { body: any; }, res: any) {
       console.log(info);
       res.status(200).send("Email sent");
     }
-  }
-  );
+  });
 }
