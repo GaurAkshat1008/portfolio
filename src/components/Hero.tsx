@@ -40,7 +40,7 @@ export const Hero = () => {
   function addToast() {
     toastIdRef.current = toast({
       title: "Navigation Info",
-      description: "You Up and Down keys given at the top and bottom of the screen to Navigate",
+      description: "You can use 'Up' and 'Down' keys given at the top and bottom of the screen to Navigate",
       status: "warning",
       duration: 6000,
       isClosable: true,
