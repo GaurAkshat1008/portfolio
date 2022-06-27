@@ -15,7 +15,7 @@ export default function contact(req: { body: any }, res: any) {
       },
       auth: {
         user: "akshatgaur69@outlook.com",
-        pass: "Iamakshat@01",
+        pass: process.env.NEXT_PUBLIC_OUTLOOK_PASSWORD,
       },
     };
   } else {
