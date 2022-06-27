@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         position={"fixed"}
         justifyContent="center"
         alignItems={"center"}
-        zIndex="100"
+        // zIndex="100"
         w={"100%"}
         top={"92vh"}
       >

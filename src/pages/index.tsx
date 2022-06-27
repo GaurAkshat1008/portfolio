@@ -3,6 +3,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { About } from "../components/About";
+import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { Projects } from "../components/Projects";
@@ -31,9 +32,10 @@ const Index:React.FC<{}> = ({}) => {
             <About />
             <Skills />
             <Projects />
-            <Footer>
-              <Text>Hi Guys ❤️ you</Text>
-            </Footer>
+            <Contact />
+            {/* <Footer> */}
+              {/* <Text>Hi Guys ❤️ you</Text> */}
+            {/* </Footer> */}
           </>
         )}
       </Flex>
