@@ -18,11 +18,11 @@ export const Contact: React.FC<{}> = ({}) => {
           <Formik
             initialValues={{ email: "", message: "", name:"", subject:"" }}
             onSubmit={(values, { setSubmitting }) => {
-              console.log("clicked")
+              // console.log("clicked")
               fetch("/api/contact", {
                 method: "POST",
                 headers: {
-                  // "Accept": "application/json, text/plain, */*",
+                  "Accept": "application/json, text/plain, */*",
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(values),
