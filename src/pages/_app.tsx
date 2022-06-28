@@ -3,13 +3,31 @@ import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DownBtn } from "../components/DownBtn";
 import { SideBar } from "../components/SideBar";
 import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      // console.log(window.scrollY);
+      if (window.scrollY <= 100) {
+        setPage(0);
+      } 
+      else if(window.scrollY >= 2900) {
+        setPage(4);
+      }
+      else{
+        setPage(1);
+      }
+    }
+  )
+  console.log("page: ", page);
+  }, []);
   setTimeout(() => {
     setIsLoading(false);
   }, 4000);
@@ -30,7 +48,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         w={"100%"}
         top={"5"}
       >
-        {isLoading ? null : <DownBtn how="up" />}
+        {isLoading ? null : page === 0 ? null : (
+          <DownBtn
+            how="up"
+          />
+        )}
       </Flex>
       <Flex position={"fixed"} width="6%">
         {isLoading ? null : <SideBar />}
@@ -47,7 +69,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         w={"100%"}
         top={"92vh"}
       >
-        {isLoading ? null : <DownBtn how="down" />}
+        {isLoading ? null : page === 4 ? null : (
+          <DownBtn
+            how="down"
+          />
+        )}
       </Flex>
     </ChakraProvider>
   );

@@ -56,7 +56,7 @@ export const Hero = () => {
     if(!isLoading && !hasSeen) {
       addToast()
       setHasSeen(true);
-      console.log("hasSeen", hasSeen);
+      // console.log("hasSeen", hasSeen);
     }
   }, [isLoading])
   return (

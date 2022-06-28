@@ -1,15 +1,16 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { Button, chakra } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
-import React from "react";
+import { type } from "os";
+import React, { ButtonHTMLAttributes } from "react";
 
 type btnVarient = "up" | "down";
 
-interface Props {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
   how: btnVarient;
 }
-export const DownBtn: React.FC<Props> = (props) => {
+export const DownBtn: React.FC<Props> = ({how, ...props}) => {
   const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === "children",
   });
@@ -55,14 +56,15 @@ export const DownBtn: React.FC<Props> = (props) => {
           boxShadow: "none",
         }}
         onClick={() => {
-          if (props.how === "up") {
+          props.onClick;
+          if (how === "up") {
             scrollUp();
           } else {
             scrollDown();
           }
         }}
       >
-        {props.how === "up" ? (
+        {how === "up" ? (
           <ChevronUpIcon
             color={"#121212"}
             fontSize={"4xl"}

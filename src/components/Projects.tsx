@@ -9,7 +9,7 @@ import { Project } from "./Project";
 
 export const Projects: React.FC<{}> = ({}) => {
   let projects = require("../utils/projects.json");
-  console.log(projects);
+  // console.log(projects);
   const ref = useRef(null);
   const isVisible = useOnScreen(ref);
   const [selectedId, setSelectedId] = React.useState("");
@@ -52,7 +52,7 @@ export const Projects: React.FC<{}> = ({}) => {
                 link={projects[key].link}
                 onClick={() => {
                   setSelectedId(key);
-                  console.log(selectedId);
+                  // console.log(selectedId);
                 }}
               />
             ))}
