@@ -38,67 +38,130 @@ export const Skills: React.FC<{}> = ({}) => {
       opacity: 1,
     },
   };
-  return (
-    <Box width={"100vw"} h="100vh">
-      <Header children="Skills"/>
-      <Box ref={ref}></Box>
-      {(isVisible && !isMobile) && (
-        <VStack spacing={12}>
-          <Flex
-            width={"80%"}
-            ml="14rem"
-            mr="10rem"
-            fontSize={"2xl"}
-            color="whiteAlpha.800"
-            direction={"row"}
-            pr={"10rem"}
-          >
+  if (!isMobile) {
+    return (
+      <Box width={"100vw"} h="100vh">
+        <Header children="Skills" />
+        <Box ref={ref}></Box>
+        {isVisible && (
+          <VStack spacing={12}>
             <Flex
-              flex={0.55}
-              pr={8}
-              pt={12}
-              as={motion.div}
-              initial={{ opacity: 0, scale: 0.2 }}
-              // @ts-ignore
-              animate={{
-                opacity: 1,
-                x: 0,
-                scale: 1,
-                transition: {
-                  duration: 0.5,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 10,
-                },
-              }}
+              width={"80%"}
+              ml="14rem"
+              mr="10rem"
+              fontSize={"2xl"}
+              color="whiteAlpha.800"
+              direction={"row"}
+              pr={"10rem"}
             >
-              I am a self-taught developer with a passion for learning new
-              technologies. I have a strong background in web development and
-              have worked with many different languages and frameworks.
+              <Flex
+                flex={0.55}
+                pr={8}
+                pt={12}
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.2 }}
+                // @ts-ignore
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 10,
+                  },
+                }}
+              >
+                I am a self-taught developer with a passion for learning new
+                technologies. I have a strong background in web development and
+                have worked with many different languages and frameworks.
+              </Flex>
+              <Grid
+                flex={0.45}
+                as={motion.ul}
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                gap={6}
+                w={"100%"}
+                listStyleType="none"
+                templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+              >
+                {Object.keys(skills).map((key, i) => (
+                  <GridItem as={motion.li} key={i} variants={item}>
+                    <ProSkills
+                      percentage={skills[key].percentage}
+                      title={skills[key].title}
+                    />
+                  </GridItem>
+                ))}
+              </Grid>
             </Flex>
-            <Grid
-              flex={0.45}
-              as={motion.ul}
-              variants={container}
-              initial="hidden"
-              animate="visible"
-              gap={6}
-              w={"100%"}
-              listStyleType="none"
-              templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+          </VStack>
+        )}
+      </Box>
+    );
+  } else {
+    return (
+      <>
+      <Header children="Skills" />
+        <Box ref={ref}>
+        {isVisible && (
+          <VStack spacing={12}>
+            <Flex
+              width={"100%"}
+              ml="auto"
+              mr="auto"
+              p={4}
+              fontSize={"2xl"}
+              color="whiteAlpha.800"
+              direction={"column"}
             >
-              {Object.keys(skills).map((key, i) => (
-                <GridItem as={motion.li} key={i} variants={item}>
-                  <ProSkills
-                    percentage={skills[key].percentage}
-                    title={skills[key].title}
-                  />
-                </GridItem>
-              ))}
-            </Grid>
-          </Flex>
-        </VStack>
-      )}
-    </Box>
-  );
+              <Flex
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.2 }}
+                // @ts-ignore
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 10,
+                  },
+                }}
+                mb={4}
+              >
+                I am a self-taught developer with a passion for learning new
+                technologies. I have a strong background in web development and
+                have worked with many different languages and frameworks.
+              </Flex>
+              <Grid
+                as={motion.ul}
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                gap={4}
+                w={"100%"}
+                listStyleType="none"
+                templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+              >
+                {Object.keys(skills).map((key, i) => (
+                  <GridItem as={motion.li} key={i} variants={item}>
+                    <ProSkills
+                      percentage={skills[key].percentage}
+                      title={skills[key].title}
+                    />
+                  </GridItem>
+                ))}
+              </Grid>
+            </Flex>
+          </VStack>
+        )}
+        </Box></>
+    )
+  }
 };
