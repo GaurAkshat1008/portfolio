@@ -3,6 +3,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
+import { isMobile } from "react-device-detect";
 import useOnScreen from "../utils/useOnScreen";
 import { Header } from "./Header";
 import { Project } from "./Project";
@@ -27,9 +28,9 @@ export const Projects: React.FC<{}> = ({}) => {
 
   return (
     <Box w={"100vw"} h={"100vh"}>
-      <Header>Projects</Header>
+      <Header children="Projects"/>
       <Box ref={ref}></Box>
-      {isVisible && (
+      {(isVisible && !isMobile) && (
         <>
           <Grid
             as={motion.ul}

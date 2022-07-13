@@ -30,6 +30,7 @@ export const Project: React.FC<Props> = ({ header, desc, link, onClick }) => {
       borderRadius={8}
       cursor="pointer"
       onClick={onClick}
+      whileHover={{ scale: 1.05 }}
     >
       <Heading as="h3" size="lg" fontWeight="bold">
         {header}

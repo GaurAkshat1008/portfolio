@@ -1,14 +1,13 @@
-import {
-  Flex, Text, useColorMode
-} from "@chakra-ui/react";
+import { Flex, Text, useColorMode } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
-const Index:React.FC<{}> = ({}) => {
+const Index: React.FC<{}> = ({}) => {
   const { setColorMode } = useColorMode();
   const [isLoading, setIsLoading] = useState(true);
   setTimeout(() => {
@@ -16,16 +15,13 @@ const Index:React.FC<{}> = ({}) => {
   }, 4000);
   useEffect(() => {
     setColorMode("dark");
-    document.body.style.overflow = "hidden";
+    if (!isMobile) {
+      document.body.style.overflow = "hidden";
+    }
   }, []);
   return (
     <Flex flexDirection={"row"}>
-     
-      <Flex
-        flex={1}
-        flexDirection={"column"}
-        overflowX={"hidden"}
-      >
+      <Flex flex={1} flexDirection={"column"} overflowX={"hidden"}>
         <Hero />
         {isLoading ? null : (
           <>
@@ -34,7 +30,7 @@ const Index:React.FC<{}> = ({}) => {
             <Projects />
             <Contact />
             {/* <Footer> */}
-              {/* <Text>Hi Guys ❤️ you</Text> */}
+            {/* <Text>Hi Guys ❤️ you</Text> */}
             {/* </Footer> */}
           </>
         )}

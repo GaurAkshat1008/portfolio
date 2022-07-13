@@ -18,6 +18,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { isValidMotionProp, motion } from "framer-motion";
 import React from "react";
 import { DownBtn } from "./DownBtn";
+import { isMobile } from "react-device-detect";
 
 export const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -54,7 +55,9 @@ export const Hero = () => {
   }
   useEffect(() => {
     if(!isLoading && !hasSeen) {
-      addToast()
+      if(!isMobile){
+        addToast()
+      }
       setHasSeen(true);
       // console.log("hasSeen", hasSeen);
     }
@@ -79,7 +82,7 @@ export const Hero = () => {
               flexDirection={"column"}
               alignItems={"center"}
             >
-              <VStack spacing={"20rem"}>
+              <VStack spacing={!isMobile ? "20rem" : '1rem'}>
                 <Flex
                   justifyContent={"center"}
                   alignContent={"center"}
@@ -100,11 +103,13 @@ export const Hero = () => {
                       // repeatType: "reverse",
                     }}
                   >
-                    <Text fontSize={{ lg: "3xl", md: "2xl", sm: "xl" }}>
+                    <Text fontSize={"3xl"}>
                       Hi, I am
                     </Text>
                   </ChakraBox>
-                  <Heading fontSize={{ lg: "6vw", md: "8vw", sm: "10vw" }}>
+                  <Heading 
+                  fontSize={['3rem', '10vw', '10vw', '10vw', '6vw']}>
+                  {/* fontSize={{ lg: "6vw", md: "12rem", sm: "12rem", xs: "12rem" }}> */}
                     Akshat Gaur
                   </Heading>
                   <ChakraBox
@@ -126,7 +131,7 @@ export const Hero = () => {
                     alignItems="center"
                   >
                     <Text
-                      fontSize={{ lg: "3xl", md: "2xl", sm: "xl" }}
+                      fontSize={"3xl"}
                       ml={"auto"}
                     >
                       A Full Stack Developer

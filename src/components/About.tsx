@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 import { useRef } from "react";
+import { isMobile } from "react-device-detect";
 import useOnScreen from "../utils/useOnScreen";
 import { DownBtn } from "./DownBtn";
 import { Header } from "./Header";
@@ -23,9 +24,9 @@ export const About = () => {
 
   return (
     <Box w={"100%"} h={"100vh"}>
-      <Header>About Me</Header>
+      <Header children = "About Me" />
       <Box ref={ref}></Box>
-      {isVisible && (
+      {(isVisible && !isMobile) && (
         <VStack spacing={12}>
           <Flex
             width={"70%"}
@@ -96,6 +97,10 @@ export const About = () => {
           </Flex>
           {/* <DownBtn how="down" /> */}
         </VStack>
+      )}
+      {isMobile && (
+        <>
+        </>
       )}
     </Box>
   );

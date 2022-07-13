@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { BrowserView } from "react-device-detect";
 import { DownBtn } from "../components/DownBtn";
 import { SideBar } from "../components/SideBar";
 import theme from "../theme";
@@ -54,9 +55,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         )}
       </Flex>
+      <BrowserView>
       <Flex position={"fixed"} width="6%">
         {isLoading ? null : <SideBar />}
       </Flex>
+      </BrowserView>
       <Component {...pageProps} />
       <Flex
         as={motion.div}

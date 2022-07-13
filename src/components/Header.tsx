@@ -1,4 +1,5 @@
 import { Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
 
 interface HeaderProps {
@@ -8,9 +9,9 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <Heading
-      mt={"2rem"}
-      ml="10rem"
-      mr={"10rem"}
+      mt={["0","2rem"]}
+      ml={['0',"10rem"]}
+      mr={['0',"10rem"]}
       fontSize={"6xl"}
       p="1rem"
       borderBottom={"1px solid #ccc"}
@@ -18,8 +19,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
       mb={"2.5rem"}
       bgGradient="linear-gradient(to right, #0ff 0%, #fff 20%,  #f0f 30%)"
       bgClip={"text"}
-    >
-      {props.children}
-    </Heading>
+      {...props}
+    />
   );
 };

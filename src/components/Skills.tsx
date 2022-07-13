@@ -1,6 +1,7 @@
 import { Box, Flex, Grid, GridItem, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 import useOnScreen from "../utils/useOnScreen";
 import { Header } from "./Header";
 import { ProSkills } from "./SkillProgress";
@@ -39,9 +40,9 @@ export const Skills: React.FC<{}> = ({}) => {
   };
   return (
     <Box width={"100vw"} h="100vh">
-      <Header>Skills</Header>
+      <Header children="Skills"/>
       <Box ref={ref}></Box>
-      {isVisible && (
+      {(isVisible && !isMobile) && (
         <VStack spacing={12}>
           <Flex
             width={"80%"}

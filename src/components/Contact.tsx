@@ -1,6 +1,7 @@
 import { Box, Button, Flex, useToast, VStack } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import React, { useRef } from "react";
+import { isMobile } from "react-device-detect";
 import useOnScreen from "../utils/useOnScreen";
 import { Header } from "./Header";
 import { InputField } from "./InputField";
@@ -25,9 +26,9 @@ export const Contact: React.FC<{}> = ({}) => {
   }
   return (
     <Box w={"100vw"} h="100vh">
-      <Header>Contact Me</Header>
+      <Header children="Contact Me" />
       <Box ref={ref}></Box>
-      {isVisible && (
+      {(isVisible && !isMobile)  && (
         // <VStack w={'70%'}>
         <Flex justifyContent={"center"} width="100%">
           <Formik 
