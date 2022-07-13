@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Node.js",
+    "percentage": "90"
+  },
+  {
+    "title": "Express.js",
+    "percentage": "100"
+  },
+  {
+    "title": "React.js",
+    "percentage": "90"
+  },
+  {
+    "title": "Next.js",
+    "percentage": "90"
+  },
+  {
+    "title": "MongoDB",
+    "percentage": "80"
+  },
+  {
+    "title": "postgresql",
+    "percentage": "80"
+  },
+  {
+    "title": "Flask",
+    "percentage": "70"
+  },
+  {
+    "title": "GO Lang",
+    "percentage": "50"
+  }
+]

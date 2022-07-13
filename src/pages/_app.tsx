@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
     }
   )
-  console.log("page: ", page);
+  // console.log("page: ", page);
   }, []);
   setTimeout(() => {
     setIsLoading(false);

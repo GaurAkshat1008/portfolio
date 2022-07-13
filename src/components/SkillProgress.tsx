@@ -1,6 +1,6 @@
 import { HStack, Progress, Text, Kbd } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 
 interface Props {
   children?: ReactNode;
@@ -14,6 +14,15 @@ export const ProSkills: React.FC<Props> = ({
   title,
   ...props
 }) => {
+  const [per, setPer] = useState(0);
+  function progressBar(percentage: number) {
+    if (per < percentage) {
+      setTimeout(() => {
+        setPer(per + 10);
+      }, 22500 / percentage);
+    }
+    return per;
+  }
   return (
     <HStack
       spacing={4}
@@ -22,29 +31,22 @@ export const ProSkills: React.FC<Props> = ({
         "0.8px 2px 6px #446688ff, 1.2px 1.2px 1px #f0f , -1.4px 1.8px 1px #0ff;"
       }
       p={1}
-      as={motion.div}
-      initial={{ y: -1000, scale: 0 }}
-      animate={{
-        y: 0,
-        scale: 1,
-        transition: {
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-        },
-      }}
-      // @ts-ignore
     >
-      <Kbd  minW={"6rem"} maxW={'max-content'} ml={"0.5rem"}>
+      <Kbd
+        minW={"6rem"}
+        maxW={"max-content"}
+        ml={"0.5rem"}
+        color={"orange.300"}
+      >
         {title}
       </Kbd>
       <Progress
-        value={percentage}
+        value={progressBar(percentage)}
         {...props}
-        colorScheme={"blue"}
+        colorScheme={"orange"}
         size={"sm"}
         w="70%"
-        isAnimated={false}
+        isAnimated={true}
       />
     </HStack>
   );

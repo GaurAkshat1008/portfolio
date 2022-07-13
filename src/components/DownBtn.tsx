@@ -1,7 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { Button, chakra } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
-import { type } from "os";
 import React, { ButtonHTMLAttributes } from "react";
 
 type btnVarient = "up" | "down";
@@ -26,6 +25,28 @@ export const DownBtn: React.FC<Props> = ({how, ...props}) => {
       behavior: "smooth",
     });
   };
+  document.addEventListener('keydown', (e) => {
+    // console.log(e.key);
+    if (e.key === 'ArrowDown') {
+      // console.log('down');
+      scrollDown();
+    } else if (e.key === 'ArrowUp') {
+      // console.log('up');
+      scrollUp();
+    } else if (e.key === 'Enter' && !e.shiftKey) {
+      // console.log('enter');
+      scrollDown();
+    } else if(e.key === ' ' && !e.shiftKey) {
+      // console.log('space');
+      scrollDown();
+    } else if (e.key === 'Enter' && e.shiftKey) {
+      // console.log('shift enter');
+      scrollUp();
+    } else if (e.key === ' ' && e.shiftKey) {
+      // console.log('shift space');
+      scrollUp();
+    }
+  })
   return (
     <ChakraBox
       animate={{

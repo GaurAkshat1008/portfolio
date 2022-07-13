@@ -1,11 +1,12 @@
-import { Box, Flex, Progress, VStack } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+import { Box, Flex, Grid, GridItem, VStack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import useOnScreen from "../utils/useOnScreen";
-import { DownBtn } from "./DownBtn";
 import { Header } from "./Header";
 import { ProSkills } from "./SkillProgress";
 
 export const Skills: React.FC<{}> = ({}) => {
+  const skills = require("../utils/skills.json");
   const ref = useRef(null);
   const isVisible = useOnScreen(ref);
   const [isLoading, setIsLoading] = useState(true);
@@ -14,9 +15,28 @@ export const Skills: React.FC<{}> = ({}) => {
       setIsLoading(false);
     }, 500);
   }
-  if(!isLoading && !isVisible){
+  if (!isLoading && !isVisible) {
     setIsLoading(true);
   }
+
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
     <Box width={"100vw"} h="100vh">
       <Header>Skills</Header>
@@ -32,22 +52,50 @@ export const Skills: React.FC<{}> = ({}) => {
             direction={"row"}
             pr={"10rem"}
           >
-            <Flex flex={0.4}>lakncasncl</Flex>
-            <VStack spacing={4} flex={0.6}>
-              <ProSkills percentage={isLoading ? 0 : 100} title={"HTML"} />
-              <ProSkills percentage={isLoading ? 0 : 100} title={"CSS"} />
-              <ProSkills percentage={isLoading ? 0 : 90} title={"React"} />
-              <ProSkills percentage={isLoading ? 0 : 90} title={"Express"} />
-              <ProSkills percentage={isLoading ? 0 : 90} title={"Node"} />
-              <ProSkills percentage={isLoading ? 0 : 90} title={"Next"} />
-              <ProSkills
-                percentage={isLoading ? 0 : 80}
-                title={"PostGresSQL"}
-              />
-              <ProSkills percentage={isLoading ? 0 : 70} title={"Firebase"} />
-            </VStack>
+            <Flex
+              flex={0.55}
+              pr={8}
+              pt={12}
+              as={motion.div}
+              initial={{ opacity: 0, scale: 0.2 }}
+              // @ts-ignore
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                transition: {
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                },
+              }}
+            >
+              I am a self-taught developer with a passion for learning new
+              technologies. I have a strong background in web development and
+              have worked with many different languages and frameworks.
+            </Flex>
+            <Grid
+              flex={0.45}
+              as={motion.ul}
+              variants={container}
+              initial="hidden"
+              animate="visible"
+              gap={6}
+              w={"100%"}
+              listStyleType="none"
+              templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+            >
+              {Object.keys(skills).map((key, i) => (
+                <GridItem as={motion.li} key={i} variants={item}>
+                  <ProSkills
+                    percentage={skills[key].percentage}
+                    title={skills[key].title}
+                  />
+                </GridItem>
+              ))}
+            </Grid>
           </Flex>
-          {/* <DownBtn how="down"/> */}
         </VStack>
       )}
     </Box>
