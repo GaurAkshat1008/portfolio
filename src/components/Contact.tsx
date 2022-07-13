@@ -17,9 +17,7 @@ export const Contact: React.FC<{}> = ({}) => {
       duration: 3000,
       isClosable: true,
       position: "bottom",
-      // variant: "top-accent",
       containerStyle: {
-        // zIndex: "9999",
         height: "10vh",
         fontSize: "1rem",
       },

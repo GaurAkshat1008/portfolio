@@ -18,8 +18,8 @@ export const ProSkills: React.FC<Props> = ({
   function progressBar(percentage: number) {
     if (per < percentage) {
       setTimeout(() => {
-        setPer(per + 10);
-      }, 22500 / percentage);
+        setPer(per + 0.5);
+      }, (100/percentage));
     }
     return per;
   }
