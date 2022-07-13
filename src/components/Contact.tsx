@@ -1,5 +1,5 @@
-import { Box, Button, Flex, VStack } from "@chakra-ui/react";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Box, Button, Flex, useToast, VStack } from "@chakra-ui/react";
+import { Form, Formik } from "formik";
 import React, { useRef } from "react";
 import useOnScreen from "../utils/useOnScreen";
 import { Header } from "./Header";
@@ -8,21 +8,38 @@ import { InputField } from "./InputField";
 export const Contact: React.FC<{}> = ({}) => {
   const ref = useRef(null);
   const isVisible = useOnScreen(ref);
+  const toast = useToast();
+  const toastIdRef = React.useRef() as React.MutableRefObject<string | number>;
+  function addToast() {
+    toastIdRef.current = toast({
+      description: "Message Sent Successfully",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "bottom",
+      // variant: "top-accent",
+      containerStyle: {
+        // zIndex: "9999",
+        height: "10vh",
+        fontSize: "1rem",
+      },
+    });
+  }
   return (
     <Box w={"100vw"} h="100vh">
       <Header>Contact Me</Header>
       <Box ref={ref}></Box>
       {isVisible && (
         // <VStack w={'70%'}>
-        <Flex justifyContent={'center'} width="100%">
+        <Flex justifyContent={"center"} width="100%">
           <Formik
-            initialValues={{ email: "", message: "", name:"", subject:"" }}
+            initialValues={{ email: "", message: "", name: "", subject: "" }}
             onSubmit={(values, { setSubmitting }) => {
               // console.log("clicked")
               fetch("/api/contact", {
                 method: "POST",
                 headers: {
-                  "Accept": "application/json, text/plain, */*",
+                  Accept: "application/json, text/plain, */*",
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(values),
@@ -31,16 +48,17 @@ export const Contact: React.FC<{}> = ({}) => {
                 values.message = "";
                 values.name = "";
                 values.subject = "";
-                console.log(res.status)
+                console.log(res.status);
                 setTimeout(() => {
                   setSubmitting(false);
-                }, 500)
-              })
+                  addToast();
+                }, 500);
+              });
               return;
             }}
           >
             {(props) => (
-              <Flex width={'50%'} justifyContent='center' alignItems={'center'}>
+              <Flex width={"50%"} justifyContent="center" alignItems={"center"}>
                 <Form>
                   <InputField
                     name="email"
@@ -69,8 +87,8 @@ export const Contact: React.FC<{}> = ({}) => {
                   />
                   <Button
                     mt={4}
-                    ml={'auto'}
-                    width={'100%'}
+                    ml={"auto"}
+                    width={"100%"}
                     colorScheme="teal"
                     disabled={props.isSubmitting}
                     type="submit"
