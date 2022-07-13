@@ -1,9 +1,7 @@
-import {
-  Box, Grid
-} from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import { isMobile } from "react-device-detect";
+import { BrowserView, isMobile, MobileView } from "react-device-detect";
 import useOnScreen from "../utils/useOnScreen";
 import { Header } from "./Header";
 import { Project } from "./Project";
@@ -26,12 +24,12 @@ export const Projects: React.FC<{}> = ({}) => {
     },
   };
 
-  return (
-    <Box w={"100vw"} h={"100vh"}>
-      <Header children="Projects"/>
-      <Box ref={ref}></Box>
-      {(isVisible && !isMobile) && (
-        <>
+  if (!isMobile) {
+    return (
+      <Box w={"100vw"} h={"100vh"}>
+        <Header children="Projects" />
+        <Box ref={ref}></Box>
+        {isVisible && (
           <Grid
             as={motion.ul}
             variants={container}
@@ -58,8 +56,43 @@ export const Projects: React.FC<{}> = ({}) => {
               />
             ))}
           </Grid>
-        </>
-      )}
-    </Box>
-  );
+        )}
+      </Box>
+    );
+  } else {
+    return (
+      <>
+        <Header children="Projects" />
+        <Box ref={ref}>
+        {isVisible && (
+        <Grid
+          as={motion.ul}
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          ml={"auto"}
+          mr={"auto"}
+          gap={2}
+          w={"80%"}
+          listStyleType="none"
+          templateColumns={"repeat(auto-fit, minmax(200px, 1fr))"}
+        >
+          {Object.keys(projects).map((key, i) => (
+            <Project
+              key={i}
+              header={projects[key].name}
+              desc={projects[key].description}
+              link={projects[key].link}
+              onClick={() => {
+                setSelectedId(key);
+                // console.log(selectedId);
+              }}
+            />
+          ))}
+        </Grid>
+        )}
+        </Box>
+      </>
+    );
+  }
 };

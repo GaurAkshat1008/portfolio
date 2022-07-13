@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { useField } from "formik";
 import React, { InputHTMLAttributes } from "react";
+import { isMobile } from "react-device-detect";
 
 type InputFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -37,7 +38,7 @@ export const InputField: React.FC<InputFieldProps> = ({
         placeholder={props.placeholder}
         h={height}
         borderRadius={8}
-        width="60vw"
+        width={!isMobile ? "60vw" : "90vw"}
         bg={'blackAlpha.400'}
       />
       {error ? <FormErrorMessage>{error}</FormErrorMessage> : null}

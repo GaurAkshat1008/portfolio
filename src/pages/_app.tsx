@@ -18,16 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       // console.log(window.scrollY);
       if (window.scrollY <= 100) {
         setPage(0);
-      } 
-      else if(window.scrollY >= 2900) {
+      } else if (window.scrollY >= 2900) {
         setPage(4);
-      }
-      else{
+      } else {
         setPage(1);
       }
-    }
-  )
-  // console.log("page: ", page);
+    });
+    // console.log("page: ", page);
   }, []);
   setTimeout(() => {
     setIsLoading(false);
@@ -38,29 +35,28 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Akshat Gaur</title>
         <link rel="shortcut icon" href="/static/favicon.png" />
       </Head>
-      <Flex
-        as={motion.div}
-        opacity={"0"}
-        whileHover={{ opacity: 1 }}
-        position={"fixed"}
-        justifyContent="center"
-        alignItems={"center"}
-        zIndex="100"
-        w={"100%"}
-        top={"5"}
-      >
-        {isLoading ? null : page === 0 ? null : (
-          <DownBtn
-            how="up"
-          />
-        )}
-      </Flex>
       <BrowserView>
-      <Flex position={"fixed"} width="6%">
-        {isLoading ? null : <SideBar />}
-      </Flex>
+        <Flex
+          as={motion.div}
+          opacity={"0"}
+          whileHover={{ opacity: 1 }}
+          position={"fixed"}
+          justifyContent="center"
+          alignItems={"center"}
+          zIndex="100"
+          w={"100%"}
+          top={"5"}
+        >
+          {isLoading ? null : page === 0 ? null : <DownBtn how="up" />}
+        </Flex>
+      </BrowserView>
+      <BrowserView>
+        <Flex position={"fixed"} width="6%">
+          {isLoading ? null : <SideBar />}
+        </Flex>
       </BrowserView>
       <Component {...pageProps} />
+      <BrowserView>
       <Flex
         as={motion.div}
         opacity={"0"}
@@ -71,13 +67,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         // zIndex="100"
         w={"100%"}
         top={"92vh"}
-      >
-        {isLoading ? null : page === 4 ? null : (
-          <DownBtn
-            how="down"
-          />
-        )}
+        >
+        {isLoading ? null : page === 4 ? null : <DownBtn how="down" />}
       </Flex>
+        </BrowserView>
     </ChakraProvider>
   );
 }

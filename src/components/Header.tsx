@@ -9,9 +9,9 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <Heading
-      mt={["0","2rem"]}
-      ml={['0',"10rem"]}
-      mr={['0',"10rem"]}
+      mt={["0", "2rem", "2rem","2rem", "2rem"]}
+      ml={["0", "10rem", "10rem","10rem", "10rem"]}
+      mr={["0", "10rem", "10rem","10rem", "10rem"]}
       fontSize={"6xl"}
       p="1rem"
       borderBottom={"1px solid #ccc"}
