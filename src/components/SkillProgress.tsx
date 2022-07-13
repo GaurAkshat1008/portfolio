@@ -19,7 +19,7 @@ export const ProSkills: React.FC<Props> = ({
     if (per < percentage) {
       setTimeout(() => {
         setPer(per + 0.5);
-      }, (100/percentage));
+      }, (20 * per) / 100);
     }
     return per;
   }

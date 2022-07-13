@@ -30,7 +30,7 @@ export const Contact: React.FC<{}> = ({}) => {
       {isVisible && (
         // <VStack w={'70%'}>
         <Flex justifyContent={"center"} width="100%">
-          <Formik
+          <Formik 
             initialValues={{ email: "", message: "", name: "", subject: "" }}
             onSubmit={(values, { setSubmitting }) => {
               // console.log("clicked")
