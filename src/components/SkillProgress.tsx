@@ -1,6 +1,7 @@
 import { HStack, Progress, Text, Kbd } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { ReactNode, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 interface Props {
   children?: ReactNode;
@@ -41,7 +42,7 @@ export const ProSkills: React.FC<Props> = ({
         {title}
       </Kbd>
       <Progress
-        value={progressBar(percentage)}
+        value={!isMobile ? (progressBar(percentage)) : percentage}
         {...props}
         colorScheme={"orange"}
         size={"sm"}

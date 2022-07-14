@@ -72,8 +72,8 @@ export const Projects: React.FC<{}> = ({}) => {
           animate="visible"
           ml={"auto"}
           mr={"auto"}
-          gap={2}
-          w={"80%"}
+          gap={4}
+          w={"90%"}
           listStyleType="none"
           templateColumns={"repeat(auto-fit, minmax(200px, 1fr))"}
         >
