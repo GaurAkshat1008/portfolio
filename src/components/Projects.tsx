@@ -62,8 +62,8 @@ export const Projects: React.FC<{}> = ({}) => {
   } else {
     return (
       <>
-        <Header children="Projects" />
         <Box ref={ref}>
+        <Header children="Projects" />
         {isVisible && (
         <Grid
           as={motion.ul}

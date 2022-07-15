@@ -29,6 +29,7 @@ export const Contact: React.FC<{}> = ({}) => {
       <Box w={"100vw"} h="100vh">
         <Header children="Contact Me" />
         <Box ref={ref}></Box>
+
         {isVisible && (
           // <VStack w={'70%'}>
           <>
@@ -117,8 +118,8 @@ export const Contact: React.FC<{}> = ({}) => {
   } else {
     return (
       <>
-        <Header children="Contact Me" />
         <Box ref={ref}>
+        <Header children="Contact Me" />
         {isVisible && (<Flex width="100%">
           <Formik
             initialValues={{

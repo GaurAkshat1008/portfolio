@@ -105,63 +105,64 @@ export const Skills: React.FC<{}> = ({}) => {
   } else {
     return (
       <>
-      <Header children="Skills" />
         <Box ref={ref}>
-        {isVisible && (
-          <VStack spacing={12}>
-            <Flex
-              width={"100%"}
-              ml="auto"
-              mr="auto"
-              p={4}
-              fontSize={"2xl"}
-              color="whiteAlpha.800"
-              direction={"column"}
-            >
+          <Header children="Skills" />
+          {isVisible && (
+            <VStack spacing={12}>
               <Flex
-                as={motion.div}
-                initial={{ opacity: 0, scale: 0.2 }}
-                // @ts-ignore
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  scale: 1,
-                  transition: {
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 10,
-                  },
-                }}
-                mb={4}
+                width={"100%"}
+                ml="auto"
+                mr="auto"
+                p={4}
+                fontSize={"2xl"}
+                color="whiteAlpha.800"
+                direction={"column"}
               >
-                I am a self-taught developer with a passion for learning new
-                technologies. I have a strong background in web development and
-                have worked with many different languages and frameworks.
+                <Flex
+                  as={motion.div}
+                  initial={{ opacity: 0, scale: 0.2 }}
+                  // @ts-ignore
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                    },
+                  }}
+                  mb={4}
+                >
+                  I am a self-taught developer with a passion for learning new
+                  technologies. I have a strong background in web development
+                  and have worked with many different languages and frameworks.
+                </Flex>
+                <Grid
+                  as={motion.ul}
+                  variants={container}
+                  initial="hidden"
+                  animate="visible"
+                  gap={4}
+                  w={"100%"}
+                  listStyleType="none"
+                  templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+                >
+                  {Object.keys(skills).map((key, i) => (
+                    <GridItem as={motion.li} key={i} variants={item}>
+                      <ProSkills
+                        percentage={skills[key].percentage}
+                        title={skills[key].title}
+                      />
+                    </GridItem>
+                  ))}
+                </Grid>
               </Flex>
-              <Grid
-                as={motion.ul}
-                variants={container}
-                initial="hidden"
-                animate="visible"
-                gap={4}
-                w={"100%"}
-                listStyleType="none"
-                templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
-              >
-                {Object.keys(skills).map((key, i) => (
-                  <GridItem as={motion.li} key={i} variants={item}>
-                    <ProSkills
-                      percentage={skills[key].percentage}
-                      title={skills[key].title}
-                    />
-                  </GridItem>
-                ))}
-              </Grid>
-            </Flex>
-          </VStack>
-        )}
-        </Box></>
-    )
+            </VStack>
+          )}
+        </Box>
+      </>
+    );
   }
 };

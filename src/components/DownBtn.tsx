@@ -26,7 +26,7 @@ export const DownBtn: React.FC<Props> = ({how, ...props}) => {
     });
   };
   document.addEventListener('keydown', (e) => {
-    // console.log(e.key);
+    console.log(e.key);
     if (e.key === 'ArrowDown') {
       // console.log('down');
       scrollDown();
@@ -45,6 +45,16 @@ export const DownBtn: React.FC<Props> = ({how, ...props}) => {
     } else if (e.key === ' ' && e.shiftKey) {
       // console.log('shift space');
       scrollUp();
+    } else if (e.key === 'Home') {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else if (e.key === 'End') {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
     }
   })
   return (
