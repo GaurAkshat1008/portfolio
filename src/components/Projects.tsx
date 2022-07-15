@@ -62,7 +62,7 @@ export const Projects: React.FC<{}> = ({}) => {
   } else {
     return (
       <>
-        <Box ref={ref}>
+        <Box ref={ref} bgColor="#1a202c">
         <Header children="Projects" />
         {isVisible && (
         <Grid

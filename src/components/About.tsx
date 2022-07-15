@@ -105,7 +105,7 @@ export const About = () => {
   } else {
     return (
       <>
-        <Box ref={ref}>
+        <Box ref={ref} bgColor="#1a202c">
           <Header children="About Me" />
           {isVisible && (
             <VStack spacing={12}>

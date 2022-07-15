@@ -105,7 +105,7 @@ export const Skills: React.FC<{}> = ({}) => {
   } else {
     return (
       <>
-        <Box ref={ref}>
+        <Box ref={ref} bgColor="#1a202c">
           <Header children="Skills" />
           {isVisible && (
             <VStack spacing={12}>

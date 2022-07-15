@@ -118,7 +118,7 @@ export const Contact: React.FC<{}> = ({}) => {
   } else {
     return (
       <>
-        <Box ref={ref}>
+        <Box ref={ref} bgColor="#1a202c">
         <Header children="Contact Me" />
         {isVisible && (<Flex width="100%">
           <Formik
