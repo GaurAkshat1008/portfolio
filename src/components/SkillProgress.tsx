@@ -7,7 +7,6 @@ import { isMobile } from "react-device-detect";
 interface Props {
   children?: ReactNode;
   percentage: number;
-  // title: string;
   src: string;
   width?: string;
 }
@@ -15,7 +14,6 @@ interface Props {
 export const ProSkills: React.FC<Props> = ({
   children,
   percentage,
-  // title,
   src,
   width,
   ...props

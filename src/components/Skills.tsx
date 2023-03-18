@@ -123,7 +123,7 @@ export const Skills: React.FC<{}> = ({}) => {
                     <GridItem as={motion.li} key={i} variants={item}>
                       <ProSkills
                         percentage={skills[key].percentage}
-                        // title={skills[key].title}
+                        src={skills[key].img}
                       />
                     </GridItem>
                   ))}
