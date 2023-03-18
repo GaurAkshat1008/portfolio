@@ -36,38 +36,37 @@ export const Hero = () => {
   const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === "children",
   });
-  const toast = useToast()
-  const toastIdRef = React.useRef() as React.MutableRefObject<string | number>;
-  function addToast() {
-    toastIdRef.current = toast({
-      title: "Navigation Info",
-      description: "You can use 'Up' and 'Down' keys given at the top and bottom of the screen to Navigate",
-      status: "warning",
-      duration: 6000,
-      isClosable: true,
-      position: "bottom",
-      variant: "top-accent",
-      containerStyle:{
-        width: "100vw",
-        fontSize: "1rem",
-      }
-    })
-  }
-  useEffect(() => {
-    if(!isLoading && !hasSeen) {
-      if(!isMobile){
-        addToast()
-      }
-      setHasSeen(true);
-      // console.log("hasSeen", hasSeen);
-    }
-  }, [isLoading])
+  // const toast = useToast()
+  // const toastIdRef = React.useRef() as React.MutableRefObject<string | number>;
+  // function addToast() {
+  //   toastIdRef.current = toast({
+  //     title: "Navigation Info",
+  //     description: "You can use 'Up' and 'Down' keys given at the top and bottom of the screen to Navigate",
+  //     status: "warning",
+  //     duration: 6000,
+  //     isClosable: true,
+  //     position: "bottom",
+  //     variant: "top-accent",
+  //     containerStyle:{
+  //       width: "100vw",
+  //       fontSize: "1rem",
+  //     }
+  //   })
+  // }
+  // useEffect(() => {
+  //   if(!isLoading && !hasSeen) {
+  //     if(!isMobile){
+  //       addToast()
+  //     }
+  //     setHasSeen(true);
+  //     // console.log("hasSeen", hasSeen);
+  //   }
+  // }, [isLoading])
   return (
     <Flex
       justifyContent="center"
       height="100vh"
       bgGradient="linear(to-l, heroGradientStart, heroGradientMid, heroGradientEnd)"
-      // bgGradient="linear(to-l, #f0f, #fff, #0ff)"
       bgClip="text"
       flexDirection={"column"}
     >
@@ -103,12 +102,12 @@ export const Hero = () => {
                       // repeatType: "reverse",
                     }}
                   >
-                    <Text fontSize={"3xl"}>
+                    <Text fontSize={["3xl"]}>
                       Hi, I am
                     </Text>
                   </ChakraBox>
                   <Heading 
-                  fontSize={['3rem', '10vw', '10vw', '10vw', '6vw']}>
+                  fontSize={['3rem', '10vw', '10vw', '10vw', '8vw']}>
                   {/* fontSize={{ lg: "6vw", md: "12rem", sm: "12rem", xs: "12rem" }}> */}
                     Akshat Gaur
                   </Heading>

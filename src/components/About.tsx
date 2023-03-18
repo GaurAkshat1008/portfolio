@@ -49,8 +49,7 @@ export const About = () => {
                     boxSize={"25rem"}
                     objectFit={"cover"}
                     borderRadius="full"
-                    boxShadow={
-                      "0 0 5px #fff, -2px 2px 25px #f0f , 2px 2px 25px #0ff;"
+                    boxShadow={"to-r, 0 0 5px headerGradientStart, -2px 2px 25px HeaderGradientEnd"
                     }
                   />
                 </Box>
@@ -67,14 +66,14 @@ export const About = () => {
                     duration: 0.5,
                     type: "spring",
                     stiffness: 100,
-                    damping: 10,
+                    damping: 20,
                   },
                 }}
                 spacing={4}
                 flex={0.6}
               >
                 {/* <VStack spacing={8}> */}
-                <Text>
+                <Text> 
                   I'm a undergraduate student at the Indian Institute of
                   Information Technology at Surat and pursuing Electronics and
                   Communication Engineering
@@ -153,8 +152,8 @@ export const About = () => {
                   spacing={4}
                   flex={1}
                   p={4}
+                  fontFamily={"revert-layer"}
                 >
-                  {/* <VStack spacing={8}> */}
                   <Text>
                     I'm a undergraduate student at the Indian Institute of
                     Information Technology at Surat and pursuing Electronics and
@@ -172,12 +171,10 @@ export const About = () => {
                     <Code colorScheme={"whatsapp"}>express.js</Code>,{" "}
                     <Code colorScheme={"whatsapp"}>react.js</Code>,{" "}
                     <Code colorScheme={"whatsapp"}>next.js</Code>, and a wide
-                    range of APIs and middleware
+                    range of APIs and middleware  
                   </Text>
-                  {/* </VStack> */}
                 </VStack>
               </Flex>
-              {/* <DownBtn how="down" /> */}
             </VStack>
           )}
         </Box>

@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, VStack } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, VStack, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
@@ -27,7 +27,7 @@ export const Skills: React.FC<{}> = ({}) => {
       scale: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -40,65 +40,35 @@ export const Skills: React.FC<{}> = ({}) => {
   };
   if (!isMobile) {
     return (
-      <Box width={"100vw"} h="100vh">
+      <Box w={"100vw"} h={"100vh"}>
         <Header children="Skills" />
-        <Box ref={ref}></Box>
+        <Box ref={ref} display={"flex"}></Box>
         {isVisible && (
-          <VStack spacing={12}>
-            <Flex
-              width={"80%"}
-              ml="14rem"
-              mr="10rem"
-              fontSize={"2xl"}
-              color="whiteAlpha.800"
-              direction={"row"}
-              pr={"10rem"}
+          <>
+          <Grid
+            as={motion.ul}
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            ml={"14rem"}
+            mr={"10rem"}
+            pr={"10rem"}
+            gap={6}
+            w={"80%"}
+            listStyleType="none"
+            templateColumns={"repeat(auto-fit, minmax(150px, 10fr))"}
             >
-              <Flex
-                flex={0.55}
-                pr={8}
-                pt={12}
-                as={motion.div}
-                initial={{ opacity: 0, scale: 0.2 }}
-                // @ts-ignore
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  scale: 1,
-                  transition: {
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 10,
-                  },
-                }}
-              >
-                I am a self-taught developer with a passion for learning new
-                technologies. I have a strong background in web development and
-                have worked with many different languages and frameworks.
-              </Flex>
-              <Grid
-                flex={0.45}
-                as={motion.ul}
-                variants={container}
-                initial="hidden"
-                animate="visible"
-                gap={6}
-                w={"100%"}
-                listStyleType="none"
-                templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
-              >
-                {Object.keys(skills).map((key, i) => (
-                  <GridItem as={motion.li} key={i} variants={item}>
-                    <ProSkills
-                      percentage={skills[key].percentage}
-                      title={skills[key].title}
-                    />
-                  </GridItem>
-                ))}
-              </Grid>
-            </Flex>
-          </VStack>
+            {Object.keys(skills).map((key, i) => (
+              <ProSkills
+                key={i}
+                percentage={skills[key].percentage}
+                // title={skills[key].title}
+                src={skills[key].img}
+                width={skills[key].width}
+              />
+            ))}
+          </Grid>
+        </>
         )}
       </Box>
     );
@@ -153,7 +123,7 @@ export const Skills: React.FC<{}> = ({}) => {
                     <GridItem as={motion.li} key={i} variants={item}>
                       <ProSkills
                         percentage={skills[key].percentage}
-                        title={skills[key].title}
+                        // title={skills[key].title}
                       />
                     </GridItem>
                   ))}
@@ -166,3 +136,43 @@ export const Skills: React.FC<{}> = ({}) => {
     );
   }
 };
+
+
+{/* <Box width={"100vw"} h="100vh">
+        <Header children="Skills" />
+        <Box ref={ref}></Box>
+        {isVisible && (
+          <VStack spacing={12}>
+            <Flex
+              width={"80%"}
+              ml="14rem"
+              mr="10rem"
+              fontSize={"2xl"}
+              color="whiteAlpha.800"
+              direction={"row"}
+              pr={"10rem"}
+            >
+              <Grid
+                flex={0.45}
+                as={motion.ul}
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                gap={6}
+                w={"100%"}
+                listStyleType="none"
+                templateColumns={"repeat(auto-fit, minmax(300px, 1fr))"}
+              >
+                {Object.keys(skills).map((key, i) => (
+                  <GridItem as={motion.li} key={i} variants={item}>
+                    <ProSkills
+                      percentage={skills[key].percentage}
+                      title={skills[key].title}
+                    />
+                  </GridItem>
+                ))}
+              </Grid>
+            </Flex>
+          </VStack>
+        )}
+      </Box> */}

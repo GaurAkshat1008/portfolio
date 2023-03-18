@@ -24,11 +24,10 @@ export const Spinner = () => {
         as={motion.div}
         animation={animation}
         padding="2"
-        // bgGradient="linear(to-l, heroGradientStart, heroGradientMid heroGradientEnd)"
         width="12"
         height="12"
         display="flex"
-        boxShadow={ "inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;"
+        boxShadow={ "inset 0 0 50px #FFF, inset 20px 0 80px #6284FF, inset -20px 0 80px #FF00FF, inset 20px 0 300px #6284FF, inset -20px 0 300px #FF0000, 0 0 50px #fff, -10px 0 80px #6284FF, 10px 0 80px #FF0000;"
         }
       />
     </Container>

@@ -25,7 +25,7 @@ export const Project: React.FC<Props> = ({ header, desc, link, onClick }) => {
       variants={item}
       w={"100%"}
       h="200"
-      bg={"orange.400"}
+      bg={"linkedin.900"}
       p={4}
       borderRadius={8}
       cursor="pointer"

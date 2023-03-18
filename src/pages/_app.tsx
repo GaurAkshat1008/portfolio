@@ -1,5 +1,5 @@
 import { ChevronUpIcon } from "@chakra-ui/icons";
-import { ChakraProvider, Flex } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex, Progress } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -57,20 +57,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       </BrowserView>
       <Component {...pageProps} />
       <BrowserView>
-      <Flex
-        as={motion.div}
-        opacity={"0"}
-        whileHover={{ opacity: 1 }}
-        position={"fixed"}
-        justifyContent="center"
-        alignItems={"center"}
-        // zIndex="100"
-        w={"100%"}
-        top={"92vh"}
+        <Flex
+          as={motion.div}
+          opacity={"0"}
+          whileHover={{ opacity: 1 }}
+          position={"fixed"}
+          justifyContent="center"
+          alignItems={"center"}
+          // zIndex="100"
+          w={"100%"}
+          top={"92vh"}
         >
-        {isLoading ? null : page === 4 ? null : <DownBtn how="down" />}
-      </Flex>
-        </BrowserView>
+          {isLoading ? null : page === 4 ? null : <DownBtn how="down" />}
+        </Flex>
+      </BrowserView>
     </ChakraProvider>
   );
 }

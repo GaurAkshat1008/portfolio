@@ -1,34 +1,50 @@
 [
   {
     "title": "Node.js",
-    "percentage": "90"
+    "percentage": "90",
+    "img": "/static/nodejs.png",
+    "width": "80%"
   },
   {
     "title": "Express.js",
-    "percentage": "100"
+    "percentage": "100",
+    "img": "/static/expressjs.png",
+    "width": "70%"
   },
   {
     "title": "React.js",
-    "percentage": "90"
+    "percentage": "90",
+    "img": "/static/reactjs.png",
+    "width": "50%"
   },
   {
     "title": "Next.js",
-    "percentage": "90"
+    "percentage": "90",
+    "img": "/static/nextjs.png",
+    "width": "40%"
   },
   {
     "title": "MongoDB",
-    "percentage": "80"
+    "percentage": "80",
+    "img": "/static/mongodb.png",
+    "width": "90%"
   },
   {
     "title": "postgresql",
-    "percentage": "80"
+    "percentage": "80",
+    "img": "/static/postgres.png",
+    "width": "80%"
   },
   {
     "title": "Flask",
-    "percentage": "70"
+    "percentage": "70",
+    "img": "/static/flask.png",
+    "width": "90%"
   },
   {
     "title": "GO Lang",
-    "percentage": "50"
+    "percentage": "50",
+    "img": "/static/golang.png",
+    "width": "80%"
   }
 ]

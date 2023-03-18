@@ -100,7 +100,9 @@ export const Contact: React.FC<{}> = ({}) => {
                         mt={4}
                         ml={"auto"}
                         width={"100%"}
-                        colorScheme="teal"
+                        // color for linkedin blue in hex
+                        bgColor={"#004471"}
+                        
                         disabled={props.isSubmitting}
                         type="submit"
                       >

@@ -2,8 +2,7 @@ import { extendTheme, ThemeConfig } from '@chakra-ui/react'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 const fonts = { 
-  heading: 'Permanent Marker, cursive',
-  body: 'Gentium Plus, serif'  
+  heading: 'League Spartan, sans-serif',
 }
 
 const breakpoints = createBreakpoints({
@@ -30,30 +29,26 @@ const theme = extendTheme({
   config, 
   semanticTokens: {
     colors: {
-      text: {
-        default: '#16161D',
-        _dark: '#ade3b8',
-      },
       heroGradientStart: {
-        default: '#7928CA',
-        _dark: '#f0f',
-        // _dark: 'rgb(178, 0, 178)',
+        default: '#FFFFFF',
       },
       heroGradientEnd: {
-        default: '#FF0080',
-        _dark: '#0ff',
+        default: '#FF0000',
       },
       heroGradientMid: {
-        default: '#ffc4df',
-        // _dark: '#fff',
+        default: '#6284FF',
       },
       borderShadowCyan:{
         default:'rgb(2, 141, 141)',
-        _dark:'#0ff',
       },
       borderShadowPink:{
         default:'rgb(139, 2, 139)',
-        _dark:'#f0f',
+      },
+      headerGradientStart:{
+        default: '#52E5E7',
+      },
+      headerGradientEnd:{
+        default: '#130CB7',
       }
     },
     radii: {
@@ -65,7 +60,6 @@ const theme = extendTheme({
     white: '#fff',
     cyan: '#0ff',
   },
-  fonts,
   breakpoints,
 })
 

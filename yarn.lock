@@ -86,6 +86,11 @@
   dependencies:
     "@chakra-ui/theme-tools" "^2.0.2"
 
+"@chakra-ui/anatomy@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/anatomy/-/anatomy-2.1.1.tgz#819a1458ff727157e5500a69fc26bfea6e944495"
+  integrity sha512-LUHAoqJAgxAqmyckG5bUpBrfEo1FleEyY+1A8hkWciy58gZ+h3GoY9oBpHcdo7XdHPpy3G+3hieK/7i9NLwxAw==
+
 "@chakra-ui/avatar@2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@chakra-ui/avatar/-/avatar-2.0.3.tgz#952ce697edf65b48959f1eb6c08b0395ee628458"
@@ -452,6 +457,11 @@
     "@chakra-ui/form-control" "2.0.2"
     "@chakra-ui/utils" "2.0.2"
 
+"@chakra-ui/shared-utils@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/shared-utils/-/shared-utils-2.0.4.tgz#8661f2b48dd93d04151b10a894a4290c9d9a080c"
+  integrity sha512-JGWr+BBj3PXGZQ2gxbKSD1wYjESbYsZjkCeE2nevyVk4rN3amV1wQzCnBAhsuJktMaZD6KC/lteo9ou9QUDzpA==
+
 "@chakra-ui/skeleton@2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@chakra-ui/skeleton/-/skeleton-2.0.6.tgz#0700f118d31782b2a0f8764b3a22ed3d722f33c8"
@@ -556,6 +566,15 @@
   dependencies:
     "@chakra-ui/utils" "2.0.2"
     "@ctrl/tinycolor" "^3.4.0"
+
+"@chakra-ui/theme-tools@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-2.0.16.tgz#17caae14a61f93759f072b16c7346489eb8be643"
+  integrity sha512-B/LD+2LNDeHYd/LVCHIJqckVZfhrycTUpNbhRVAiDRaS0AAcsPxKas7liTFkkMkM076YjiHlcla3KpVX+E9tzg==
+  dependencies:
+    "@chakra-ui/anatomy" "2.1.1"
+    "@chakra-ui/shared-utils" "2.0.4"
+    color2k "^2.0.0"
 
 "@chakra-ui/theme@2.1.0":
   version "2.1.0"
@@ -1013,6 +1032,11 @@ color-name@1.1.3:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
   integrity sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==
 
+color2k@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/color2k/-/color2k-2.0.2.tgz#ac2b4aea11c822a6bcb70c768b5a289f4fffcebb"
+  integrity sha512-kJhwH5nAwb34tmyuqq/lgjEKzlFXn1U99NlnB6Ws4qVaERcRUYeYP1cBw6BJ4vxaWStAUEef4WMr7WjOCnBt8w==
+
 compute-scroll-into-view@1.0.14:
   version "1.0.14"
   resolved "https://registry.yarnpkg.com/compute-scroll-into-view/-/compute-scroll-into-view-1.0.14.tgz#80e3ebb25d6aa89f42e533956cb4b16a04cfe759"
@@ -1374,6 +1398,11 @@ react-focus-lock@^2.9.1:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
+react-intersection-observer@^8.25.1:
+  version "8.34.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.34.0.tgz#6f6e67831c52e6233f6b6cc7eb55814820137c42"
+  integrity sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw==
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -1397,6 +1426,14 @@ react-remove-scroll@^2.5.4:
     tslib "^2.1.0"
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
+
+react-scroll-percentage@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-percentage/-/react-scroll-percentage-4.3.0.tgz#55ad2ad3ee98be4dce897be84dd810ee7d8e674c"
+  integrity sha512-9eSr2LhMx+RLIvCFvqaGhOOzPH8ZqNAee3QKVyacsIf06A/yTr9PLqc+IYCqTI02WOJ9pEr5DWz55g977yBQcg==
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+    react-intersection-observer "^8.25.1"
 
 react-spring@^9.5.0:
   version "9.5.0"
