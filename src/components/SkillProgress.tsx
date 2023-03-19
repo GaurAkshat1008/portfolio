@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Divider, GridItem, Heading, HStack, Progress, Text } from "@chakra-ui/react";
+import { Box, Divider, GridItem, Heading, HStack, Progress, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { ReactNode, useState } from "react";
 import { isMobile } from "react-device-detect";
@@ -47,9 +47,9 @@ export const ProSkills: React.FC<Props> = ({
       whileHover={{ scale: 1.05 }}
       display="flex"
     >
-      <Heading size="lg" display={'flex'} alignItems={"center"} justifyContent={"center"}>
+      <Box display={'flex'} alignItems={"center"} justifyContent={"center"}>
         <img src={src} alt="/" width={width}/>
-      </Heading>
+      </Box>
     </GridItem>
   );
 };

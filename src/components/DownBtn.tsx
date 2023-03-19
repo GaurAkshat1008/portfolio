@@ -26,7 +26,7 @@ export const DownBtn: React.FC<Props> = ({how, ...props}) => {
     });
   };
   document.addEventListener('keydown', (e) => {
-    console.log(e.key);
+    // console.log(e.key);
     if (e.key === 'ArrowDown') {
       // console.log('down');
       scrollDown();

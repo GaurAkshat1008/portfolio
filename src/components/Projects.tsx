@@ -67,10 +67,6 @@ export const Projects: React.FC<{}> = ({}) => {
         <Header children="Projects" />
         {isVisible && (
         <Grid
-          as={motion.ul}
-          variants={container}
-          initial="hidden"
-          animate="visible"
           ml={"auto"}
           mr={"auto"}
           gap={4}
@@ -84,6 +80,7 @@ export const Projects: React.FC<{}> = ({}) => {
               header={projects[key].name}
               desc={projects[key].description}
               link={projects[key].link}
+              skills={projects[key].skills}
               onClick={() => {
                 setSelectedId(key);
                 // console.log(selectedId);

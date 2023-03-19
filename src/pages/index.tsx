@@ -1,4 +1,4 @@
-import { Flex, useColorMode, Progress, Box } from "@chakra-ui/react";
+import { Flex, useColorMode, Progress, Box, color } from "@chakra-ui/react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -8,6 +8,8 @@ import { Contact } from "../components/Contact";
 import { Hero } from "../components/Hero";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
+// import CustomCursor from "custom-cursor-react";
+// import "custom-cursor-react/dist/index.css";
 
 const Index: React.FC<{}> = ({}) => {
   const { setColorMode } = useColorMode();
@@ -32,7 +34,7 @@ const Index: React.FC<{}> = ({}) => {
     return (
       <Flex flexDirection={"row"}>
         <Flex flex={1} flexDirection={"column"} overflowX={"hidden"}>
-          <Box
+          {!isMobile && (<Box
             as={motion.div}
             initial={{ width: "0%" }}
             animate={{ width: `${scrollPercentage}%` }}
@@ -44,7 +46,7 @@ const Index: React.FC<{}> = ({}) => {
             bgColor={"#00b4d8"}
             zIndex={"200"}
             transition={"width 0.2s ease-out"}
-          ></Box>
+          ></Box>)}
           <Hero />
           {isLoading ? null : (
             <>
@@ -62,24 +64,26 @@ const Index: React.FC<{}> = ({}) => {
       <>
         {toBeShown && <Hero />}
         {isLoading ? null : (
-          <Parallax pages={8} style={{ top: "0", left: "0" }}>
-            <ParallaxLayer offset={0} speed={3}></ParallaxLayer>
-            <ParallaxLayer offset={1} speed={1}>
+          <>
+          {/* // <Parallax pages={8} style={{ top: "0", left: "0" }}> */}
+            {/* // <ParallaxLayer offset={0} speed={3}></ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={1} speed={1}> */}
               <About />
-            </ParallaxLayer>
-            <ParallaxLayer offset={2} speed={3}></ParallaxLayer>
-            <ParallaxLayer offset={3} speed={1}>
+            {/* // </ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={2} speed={3}></ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={3} speed={1}> */}
               <Skills />
-            </ParallaxLayer>
-            <ParallaxLayer offset={4} speed={3}></ParallaxLayer>
-            <ParallaxLayer offset={5} speed={1}>
+            {/* // </ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={4} speed={3}></ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={5} speed={1}> */}
               <Projects />
-            </ParallaxLayer>
-            <ParallaxLayer offset={6} speed={3}></ParallaxLayer>
-            <ParallaxLayer offset={7} speed={1}>
+            {/* // </ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={6} speed={3}></ParallaxLayer> */}
+            {/* // <ParallaxLayer offset={7} speed={1}> */}
               <Contact />
-            </ParallaxLayer>
-          </Parallax>
+            {/* // </ParallaxLayer> */}
+          {/* // </Parallax> */}
+        </>
         )}
       </>
     );

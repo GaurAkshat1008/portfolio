@@ -89,20 +89,6 @@ export const Skills: React.FC<{}> = ({}) => {
                 direction={"column"}
               >
                 <Flex
-                  as={motion.div}
-                  initial={{ opacity: 0, scale: 0.2 }}
-                  // @ts-ignore
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                    scale: 1,
-                    transition: {
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 10,
-                    },
-                  }}
                   mb={4}
                 >
                   I am a self-taught developer with a passion for learning new
@@ -110,10 +96,6 @@ export const Skills: React.FC<{}> = ({}) => {
                   and have worked with many different languages and frameworks.
                 </Flex>
                 <Grid
-                  as={motion.ul}
-                  variants={container}
-                  initial="hidden"
-                  animate="visible"
                   gap={4}
                   w={"100%"}
                   listStyleType="none"
@@ -124,6 +106,7 @@ export const Skills: React.FC<{}> = ({}) => {
                       <ProSkills
                         percentage={skills[key].percentage}
                         src={skills[key].img}
+                        width={skills[key].width}
                       />
                     </GridItem>
                   ))}

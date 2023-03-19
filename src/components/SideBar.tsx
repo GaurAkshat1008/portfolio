@@ -5,13 +5,13 @@ import {
   Divider,
   Flex,
   HStack,
+  Tooltip,
   VStack,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export const SideBar = () => {
-                   
   return (
     <>
       <HStack>
@@ -34,27 +34,35 @@ export const SideBar = () => {
               justifyContent="center"
               alignItems={"center"}
             >
-              <a
-                href={"https://www.linkedin.com/in/akshat-gaur-2b1973217/"}
-                target="_blank"
-              >
-                <img src="/static/linkedin.png" alt="" />
-              </a>
+              <Tooltip hasArrow  label="Linkedin" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
+                <a
+                  href={"https://www.linkedin.com/in/akshat-gaur-2b1973217/"}
+                  target="_blank"
+                >
+                  <img src="/static/linkedin.png" alt="" />
+                </a>
+              </Tooltip>
             </Box>
             <Box mt={8} cursor="pointer">
+            <Tooltip hasArrow  label="Github" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
               <a href={"https://github.com/jueviole-grace/"} target="_blank">
                 <img src="/static/github.png" alt="" />
               </a>
+            </Tooltip>
             </Box>
             <Box mt={8} cursor={"pointer"}>
+            <Tooltip hasArrow  label="Leetcode" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
               <a href={"https://leetcode.com/jueviole-grace/"} target="_blank">
                 <img src="/static/leetcode.png" alt="image" />
               </a>
+            </Tooltip>
             </Box>
             <Box mt={8} cursor={"pointer"}>
+            <Tooltip hasArrow  label="Resume" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
               <a href={"https://tinyurl.com/2mkxkmht"} target="_blank">
                 <img src="/static/resume.png" alt="image" />
               </a>
+            </Tooltip>
             </Box>
           </Flex>
         </VStack>
