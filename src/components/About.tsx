@@ -30,7 +30,7 @@ export const About = () => {
         {isVisible && (
           <VStack spacing={12}>
             <Flex
-              width={"70%"}
+              width={["100%","70%"]}
               ml="14rem"
               mr="10rem"
               fontSize={"2xl"}
@@ -45,8 +45,8 @@ export const About = () => {
                   whileTap={{ scale: 0.7, transition: { duration: 0.5 } }}
                 >
                   <Image
-                    src="/static/bg.jpg"
-                    boxSize={"25rem"}
+                    src="/static/bg(1).png"
+                    boxSize={[200, 200, 250, 350]}
                     objectFit={"cover"}
                     borderRadius="full"
                     boxShadow={"to-r, 0 0 5px headerGradientStart, -2px 2px 25px HeaderGradientEnd"
@@ -71,12 +71,11 @@ export const About = () => {
                 }}
                 spacing={4}
                 flex={0.6}
+                fontSize={['xs','md','lg',"2xl"]}
               >
                 {/* <VStack spacing={8}> */}
                 <Text> 
-                  I'm a undergraduate student at the Indian Institute of
-                  Information Technology at Surat and pursuing Electronics and
-                  Communication Engineering
+                I'm an undergraduate student studying Electronics and Communication Engineering at the Indian Institute of Information Technology in Surat.
                 </Text>
                 <Text>
                   I'm a full stack developer with a passion for building

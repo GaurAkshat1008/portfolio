@@ -51,6 +51,11 @@ export const SideBar = () => {
                 <img src="/static/leetcode.png" alt="image" />
               </a>
             </Box>
+            <Box mt={8} cursor={"pointer"}>
+              <a href={"https://tinyurl.com/2mkxkmht"} target="_blank">
+                <img src="/static/resume.png" alt="image" />
+              </a>
+            </Box>
           </Flex>
         </VStack>
       </HStack>

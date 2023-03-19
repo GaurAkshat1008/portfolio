@@ -49,6 +49,7 @@ export const Projects: React.FC<{}> = ({}) => {
                 header={projects[key].name}
                 desc={projects[key].description}
                 link={projects[key].link}
+                skills={projects[key].skills}
                 onClick={() => {
                   setSelectedId(key);
                   // console.log(selectedId);

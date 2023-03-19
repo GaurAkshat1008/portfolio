@@ -2,26 +2,31 @@
   {
     "name": "QRoom",
     "description": "An idea to connect people with each other easily with just a click of a button",
-    "link": "https://github.com/jueviole-grace/QRoom"
+    "link": "https://github.com/jueviole-grace/QRoom",
+    "skills": ["React", "Node", "Express", "Socket.io", "MongoDB"]
   },
   {
     "name": "DaWae",
     "description": "website for people to post blogs and like your favorite posts ",
-    "link": "https://github.com/jueviole-grace/daWae/tree/master"
+    "link": "https://github.com/jueviole-grace/daWae/tree/master",
+    "skills": ["React", "Node", "Express", "Socket.io", "MongoDB"]
   },
   {
     "name": "Krypt",
     "description": "A single page application for a cryptocurrency exchange platform that allows users to buy and sell cryptocurrencies",
-    "link": "https://github.com/jueviole-grace/Krypt"
+    "link": "https://github.com/jueviole-grace/Krypt",
+    "skills": ["React", "Node", "Express", "Socket.io", "MongoDB"]
   },
   {
     "name": "Carsell",
     "description": "A single application to meet all your needs related to buying and sellin 2nd hand cars it connects buyers and sellers in simple interface",
-    "link": "https://github.com/jueviole-grace/CarSell"
+    "link": "https://github.com/jueviole-grace/CarSell",
+    "skills": ["React", "Node", "Express", "Socket.io", "MongoDB"]
   },
   {
     "name": "Grahashram",
     "description": "Solution for SIH 2022 PS-PK1031(a solution for people to connect the culture through homestays and for homestays to advertise themselves easily)",
-    "link": "https://grahashram.vercel.app"
+    "link": "https://grahashram.vercel.app",
+    "skills": ["React", "Node", "Express", "Socket.io", "MongoDB"]
   }
 ]
