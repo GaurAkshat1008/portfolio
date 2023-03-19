@@ -123,7 +123,7 @@ export const About = () => {
                     whileTap={{ scale: 0.7, transition: { duration: 0.5 } }}
                   >
                     <Image
-                      src="/static/bg.jpg"
+                      src="/static/bg.png"
                       boxSize={"20rem"}
                       objectFit={"cover"}
                       borderRadius="full"
