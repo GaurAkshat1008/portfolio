@@ -28,6 +28,7 @@ import { DownBtn } from "../components/DownBtn";
 import { SideBar } from "../components/SideBar";
 import theme from "../theme";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,6 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/static/favicon.png" />
       </Head>
       <>
+      <Analytics />
         <MobileView>
           <Flex position={"fixed"} width="100%">
             {isLoading ? null : (
