@@ -59,7 +59,7 @@ export const SideBar = () => {
             </Box>
             <Box mt={8} cursor={"pointer"}>
             <Tooltip hasArrow  label="Resume" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
-              <a href={"https://tinyurl.com/2mkxkmht"} target="_blank">
+              <a href={"https://tinyurl.com/resume-akshat-gaur-1008"} target="_blank">
                 <img src="/static/resume.png" alt="image" />
               </a>
             </Tooltip>
