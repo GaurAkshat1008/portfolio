@@ -57,6 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Akshat Gaur</title>
         <link rel="shortcut icon" href="/static/favicon.png" />
+        <meta name="google-site-verification" content="VugWeMPxsBIjSMQ6ZgNMCJUC0S8xXHh-cKaJIt3em30" />
       </Head>
       <>
       <Analytics />
