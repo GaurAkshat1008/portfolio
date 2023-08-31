@@ -36,7 +36,7 @@ export const SideBar = () => {
             >
               <Tooltip hasArrow  label="Linkedin" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
                 <a
-                  href={"https://www.linkedin.com/in/akshat-gaur-2b1973217/"}
+                  href={"https://www.linkedin.com/in/akshatgaur1008/"}
                   target="_blank"
                 >
                   <img src="/static/linkedin.png" alt="" />
@@ -45,7 +45,7 @@ export const SideBar = () => {
             </Box>
             <Box mt={8} cursor="pointer">
             <Tooltip hasArrow  label="Github" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
-              <a href={"https://github.com/jueviole-grace/"} target="_blank">
+              <a href={"https://github.com/GaurAkshat1008/"} target="_blank">
                 <img src="/static/github.png" alt="" />
               </a>
             </Tooltip>
@@ -59,7 +59,7 @@ export const SideBar = () => {
             </Box>
             <Box mt={8} cursor={"pointer"}>
             <Tooltip hasArrow  label="Resume" bg='rgba(26, 32, 44, 1)' fontSize={"20px"} color='white' placement="right" closeDelay={500}>
-              <a href={"https://tinyurl.com/resume-akshat-gaur-1008"} target="_blank">
+              <a href={"https://tinyurl.com/Akshat-Gaur-resume"} target="_blank">
                 <img src="/static/resume.png" alt="image" />
               </a>
             </Tooltip>
