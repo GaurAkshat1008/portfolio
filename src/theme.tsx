@@ -1,66 +1,80 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-const fonts = { 
-  heading: 'League Spartan, sans-serif',
-}
-
-const breakpoints = createBreakpoints({
-  sm: '40em',
-  md: '52em',
-  lg: '64em',
-  xl: '80em',
-})
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: 'dark',
-  useSystemColorMode: true,
-}
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 
 const theme = extendTheme({
-  styles:{
-    global:{
-      '::-webkit-scrollbar':{
-        width: '0px',
-        display: 'none'
-      }
-    }
+  config,
+  fonts: {
+    heading: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`,
+    body: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`,
+    mono: `'JetBrains Mono', 'Fira Code', monospace`,
   },
-  config, 
-  semanticTokens: {
-    colors: {
-      heroGradientStart: {
-        default: '#FFFFFF',
+  styles: {
+    global: {
+      "html, body": {
+        bg: "#0a0a0a",
+        color: "#e4e4e7",
+        scrollBehavior: "smooth",
       },
-      heroGradientEnd: {
-        default: '#FF0000',
+      "::-webkit-scrollbar": {
+        width: "6px",
       },
-      heroGradientMid: {
-        default: '#6284FF',
+      "::-webkit-scrollbar-track": {
+        bg: "#0a0a0a",
       },
-      borderShadowCyan:{
-        default:'rgb(2, 141, 141)',
+      "::-webkit-scrollbar-thumb": {
+        bg: "#27272a",
+        borderRadius: "full",
       },
-      borderShadowPink:{
-        default:'rgb(139, 2, 139)',
+      "::selection": {
+        bg: "rgba(99, 102, 241, 0.3)",
+        color: "#fff",
       },
-      headerGradientStart:{
-        default: '#52E5E7',
-      },
-      headerGradientEnd:{
-        default: '#130CB7',
-      }
-    },
-    radii: {
-      button: '12px',
     },
   },
   colors: {
-    black: '#16161D',
-    white: '#fff',
-    cyan: '#0ff',
+    brand: {
+      50: "#eef2ff",
+      100: "#e0e7ff",
+      200: "#c7d2fe",
+      300: "#a5b4fc",
+      400: "#818cf8",
+      500: "#6366f1",
+      600: "#4f46e5",
+      700: "#4338ca",
+      800: "#3730a3",
+      900: "#312e81",
+    },
+    surface: {
+      0: "#0a0a0a",
+      1: "#111113",
+      2: "#18181b",
+      3: "#1e1e22",
+      4: "#27272a",
+    },
+    text: {
+      primary: "#fafafa",
+      secondary: "#a1a1aa",
+      tertiary: "#71717a",
+    },
   },
-  breakpoints,
-})
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: "500",
+        borderRadius: "lg",
+      },
+    },
+    Heading: {
+      baseStyle: {
+        color: "#fafafa",
+        fontWeight: "700",
+      },
+    },
+  },
+});
 
-export default theme
+export default theme;

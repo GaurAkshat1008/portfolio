@@ -5,11 +5,21 @@ import theme from "../theme";
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html>
-       <Head />
+      <Html lang="en">
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
-          {/* Make Color mode to persists when you refresh the page. */}
-          <ColorModeScript initialColorMode={theme.config.useSystemColorMode}/>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>
